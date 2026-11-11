@@ -1,5 +1,7 @@
 """Lapis 2 — uji kontrak data."""
-import pandas as pd, pytest, yaml
+import pytest
+import yaml
+
 from src import data as D
 
 CFG = yaml.safe_load(open("conf/params.yaml", encoding="utf-8"))

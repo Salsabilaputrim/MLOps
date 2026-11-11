@@ -1,11 +1,19 @@
 """rilis.py — simulasi strategi rilis: shadow, canary berstrata, dan kriteria pembatalan."""
 from __future__ import annotations
-import argparse, sys, os
-import joblib, numpy as np, pandas as pd, yaml
+
+import argparse
+import os
+import sys
+
+import joblib
+import numpy as np
+import pandas as pd
+import yaml
 from scipy.stats import ks_2samp
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import data as D, features as F
+from src import data as D
+from src import features as F
 
 KRITERIA = {
     "ks_skor_maks": 0.10,              # pembatalan bila distribusi skor terlalu bergeser

@@ -3,8 +3,12 @@
 Inilah uji dengan pengembalian terbesar per satuan usaha: ia menangkap
 training-serving skew, kelas kesalahan yang tidak menimbulkan galat apa pun.
 """
-import numpy as np, pandas as pd, pytest, yaml
-from src import data as D, features as F
+import numpy as np
+import pytest
+import yaml
+
+from src import data as D
+from src import features as F
 
 CFG = yaml.safe_load(open("conf/params.yaml", encoding="utf-8"))
 TOLERANSI = 1e-9

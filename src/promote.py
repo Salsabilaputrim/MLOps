@@ -1,11 +1,20 @@
 """promote.py — champion/challenger: memutuskan apakah penantang layak dipromosikan."""
 from __future__ import annotations
-import argparse, json, sys, os
-import joblib, numpy as np, pandas as pd, yaml
+
+import argparse
+import os
+import sys
+
+import joblib
+import numpy as np
+import pandas as pd
+import yaml
 from scipy.stats import ks_2samp
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import data as D, features as F, evaluate as E
+from src import data as D
+from src import evaluate as E
+from src import features as F
 
 MARGIN_MIN = 0.008        # dua kali rentang ketidakpastian tipikal
 TURUN_MAKS_SEGMEN = 0.02  # penurunan AUC segmen yang masih dapat diterima

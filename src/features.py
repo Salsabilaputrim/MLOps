@@ -8,7 +8,7 @@ definisi fitur yang ditulis dua kali.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 
 import numpy as np
 import pandas as pd
@@ -46,7 +46,7 @@ class ArtefakFitur:
             json.dump(asdict(self), f, indent=2)
 
     @staticmethod
-    def muat(jalur: str) -> "ArtefakFitur":
+    def muat(jalur: str) -> ArtefakFitur:
         with open(jalur, encoding="utf-8") as f:
             return ArtefakFitur(**json.load(f))
 

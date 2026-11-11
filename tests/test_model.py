@@ -1,6 +1,12 @@
 """Lapis 3-4 — uji model dan perilaku."""
-import json, joblib, numpy as np, pandas as pd, pytest, yaml
-from src import data as D, features as F
+import json
+
+import joblib
+import pytest
+import yaml
+
+from src import data as D
+from src import features as F
 
 CFG = yaml.safe_load(open("conf/params.yaml", encoding="utf-8"))
 GATES = yaml.safe_load(open("conf/gates.yaml", encoding="utf-8"))

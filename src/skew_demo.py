@@ -4,8 +4,13 @@ Dijalankan pada Praktikum 2. Tujuannya membuat mahasiswa MELIHAT bahwa kesalahan
 ini tidak menimbulkan galat apa pun: layanan tetap menjawab, hanya jawabannya salah.
 """
 from __future__ import annotations
-import sys, os
-import numpy as np, pandas as pd, yaml
+
+import os
+import sys
+
+import numpy as np
+import pandas as pd
+import yaml
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import roc_auc_score
 

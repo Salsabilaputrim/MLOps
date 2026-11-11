@@ -1,13 +1,21 @@
 """monitor.py — deteksi drift (uji univariat + domain classifier) dan keadilan."""
 from __future__ import annotations
-import argparse, json, sys, os
-import numpy as np, pandas as pd, yaml
-from scipy.stats import ks_2samp, chi2_contingency
+
+import argparse
+import json
+import os
+import sys
+
+import numpy as np
+import pandas as pd
+import yaml
+from scipy.stats import chi2_contingency, ks_2samp
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import data as D, features as F
+from src import data as D
+from src import features as F
 
 KATEGORIK = {"segmen", "wilayah", "kanal"}
 

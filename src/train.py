@@ -1,10 +1,19 @@
 """train.py — pipeline pelatihan yang dapat dijalankan ulang dan dicatat."""
 from __future__ import annotations
-import argparse, json, os, subprocess, sys
-import joblib, numpy as np, pandas as pd, yaml
+
+import argparse
+import json
+import os
+import subprocess
+import sys
+
+import joblib
+import yaml
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import data as D, features as F, evaluate as E
+from src import data as D
+from src import evaluate as E
+from src import features as F
 
 
 def komit_git() -> str:
@@ -29,8 +38,8 @@ def bangun_model(p: dict):
                                       random_state=p["random_state"])
     if algo == "logreg":
         from sklearn.linear_model import LogisticRegression
-        from sklearn.preprocessing import StandardScaler
         from sklearn.pipeline import make_pipeline
+        from sklearn.preprocessing import StandardScaler
         return make_pipeline(StandardScaler(),
                              LogisticRegression(max_iter=3000,
                                                 random_state=p["random_state"]))

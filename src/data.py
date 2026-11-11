@@ -1,5 +1,6 @@
 """data.py — pemuatan, validasi skema, dan pembagian menurut waktu."""
 from __future__ import annotations
+
 import pandas as pd
 
 SKEMA = {

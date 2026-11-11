@@ -5,14 +5,20 @@ PARAMETER yang dikirim ke server, lalu dirata-ratakan berbobot jumlah data.
 Data mentah tidak pernah berpindah.
 """
 from __future__ import annotations
-import sys, os
-import numpy as np, pandas as pd, yaml
-from sklearn.linear_model import SGDClassifier, LogisticRegression
+
+import os
+import sys
+
+import numpy as np
+import pandas as pd
+import yaml
+from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.metrics import roc_auc_score
 from sklearn.preprocessing import StandardScaler
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import data as D, features as F
+from src import data as D
+from src import features as F
 
 CFG = yaml.safe_load(open("conf/params.yaml", encoding="utf-8"))
 PUTARAN = 15

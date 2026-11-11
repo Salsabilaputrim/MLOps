@@ -1,7 +1,13 @@
 """model_card.py — membangkitkan Dokumen Model dari metadata, bukan diketik ulang."""
 from __future__ import annotations
-import argparse, json, os, datetime as dt
-import pandas as pd, yaml
+
+import argparse
+import datetime as dt
+import json
+import os
+
+import pandas as pd
+import yaml
 
 TEMPLAT = """# Dokumen Model (Model Card)
 
